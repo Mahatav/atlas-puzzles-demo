@@ -25,8 +25,8 @@
       <nav>
         <a class="logo" href="index.html"><span class="dot"></span>Atlas Puzzles</a>
         <ul>
-          <li><a href="shop.html">The Shelves</a></li>
-          <li><a href="events.html">Puzzle Nights</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="lounge.html">Lounge &amp; Library</a></li>
           <li><a class="active" href="visit.html">Visit &amp; Holds</a></li>
         </ul>
         <a class="btn" href="#hold" style="padding:10px 20px;font-size:14px;">Hold a Puzzle</a>
@@ -88,11 +88,24 @@
     </section>
   </div>
 
+  <script>
+    (function(){
+      var holds=JSON.parse(localStorage.getItem("atlasHolds")||"[]");
+      if(holds.length){
+        var ta=document.getElementById("want");
+        ta.value="From the shop page: "+holds.join(", ");
+      }
+      document.querySelector("#hold form").addEventListener("submit",function(){
+        localStorage.removeItem("atlasHolds");
+      });
+    })();
+  </script>
+
   <footer>
     <div class="wrap">
       <a class="logo" href="index.html"><span class="dot"></span>Atlas Puzzles</a>
       <div class="footer-links">
-        <a href="shop.html">The Shelves</a><a href="events.html">Puzzle Nights</a><a href="visit.html">Visit &amp; Holds</a>
+        <a href="shop.html">Shop</a><a href="lounge.html">Lounge &amp; Library</a><a href="visit.html">Visit &amp; Holds</a>
       </div>
       <p>&copy; 2026 Atlas Puzzles — demo site created as a design sample.</p>
       <p class="fine">This concept site was put together by a local web design service as an unsolicited sample. Not affiliated with or endorsed by Atlas Puzzles. If you'd rather not be contacted again about this, just reply and let us know.</p>
