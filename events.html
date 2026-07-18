@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Puzzle Nights | Atlas Puzzles, Kelowna BC</title>
+<meta name="description" content="Weekly puzzle nights and events at Atlas Puzzles on Tutt St in Kelowna. Save a seat at the table." />
+<link rel="stylesheet" href="styles.css" />
+<style>
+  .events-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:52px;align-items:start;}
+  .event-card{background:#fff;border:3px solid var(--ink);border-radius:var(--r);box-shadow:6px 6px 0 var(--ink);padding:28px;margin-bottom:24px;}
+  .event-card .when{font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;color:var(--sun);margin-bottom:6px;}
+  .event-card h3{margin:0 0 8px;font-size:22px;}
+  .event-card p{margin:0;font-size:15px;color:rgba(36,30,78,.72);}
+  .event-card .meta{display:flex;gap:18px;margin-top:14px;font-size:13px;font-weight:700;flex-wrap:wrap;}
+  .event-card .meta span{background:var(--bg);border:2px solid var(--ink);border-radius:100px;padding:4px 12px;}
+  @media (max-width:860px){.events-grid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+  <div class="demo-banner">DEMO CONCEPT SITE — a design sample built for Atlas Puzzles, not yet live for the business</div>
+
+  <header>
+    <div class="wrap">
+      <nav>
+        <a class="logo" href="index.html"><span class="dot"></span>Atlas Puzzles</a>
+        <ul>
+          <li><a href="shop.html">The Shelves</a></li>
+          <li><a class="active" href="events.html">Puzzle Nights</a></li>
+          <li><a href="visit.html">Visit &amp; Holds</a></li>
+        </ul>
+        <a class="btn" href="#rsvp" style="padding:10px 20px;font-size:14px;">Save a Seat</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="page-hero">
+    <div class="wrap">
+      <span class="eyebrow">Puzzle nights</span>
+      <h1>Pull up a chair</h1>
+      <p>The shop stays open late on Thursdays and the tables come out. Come alone or bring your team — either way you'll leave mid-puzzle and come back next week.</p>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <section class="events-grid">
+      <div>
+        <div class="event-card">
+          <div class="when">Every Thursday · 6–9pm</div>
+          <h3>Thursday Puzzle Night</h3>
+          <p>The regular one. We put out three or four open puzzles, the kettle goes on, and whoever shows up builds. Free to join, no sign-up needed — though a heads-up helps us set enough tables.</p>
+          <div class="meta"><span>Free</span><span>All levels</span><span>Drop in</span></div>
+        </div>
+        <div class="event-card">
+          <div class="when">Last Saturday of the month · 10am–12pm</div>
+          <h3>Kids' Table Saturday</h3>
+          <p>Big-piece puzzles, juice boxes, and zero pressure. Parents can browse the shelves or just enjoy two quiet hours nearby.</p>
+          <div class="meta"><span>Free</span><span>Ages 3–10</span><span>Parent stays in shop</span></div>
+        </div>
+        <div class="event-card">
+          <div class="when">Date to be announced</div>
+          <h3>The 1000-Piece Race</h3>
+          <p>Teams of four, identical 1000-piece puzzles, first table to finish wins shop credit. We ran the idea past exactly five customers and all five said yes, so it's happening.</p>
+          <div class="meta"><span>$10/team</span><span>Teams of 4</span><span>Prizes</span></div>
+        </div>
+      </div>
+
+      <div id="rsvp">
+        <div class="form">
+          <span class="eyebrow">Save a seat</span>
+          <h2 style="margin:0 0 10px;font-size:clamp(1.4rem,2.4vw,1.9rem);">Let us know you're coming</h2>
+          <p style="margin:0 0 24px;font-size:15px;color:rgba(36,30,78,.7);">Not required, but it means a table and a chair with your name on it.</p>
+          <div class="form-success" id="ok">Seat saved! See you Thursday. <em>(Demo form — nothing was actually sent.)</em></div>
+          <form onsubmit="event.preventDefault();document.getElementById('ok').style.display='block';this.reset();">
+            <label for="name">Name</label>
+            <input id="name" type="text" autocomplete="name" required />
+            <label for="phone">Phone or email</label>
+            <input id="phone" type="text" required />
+            <label for="event">Which event?</label>
+            <select id="event" required>
+              <option value="">Choose one…</option>
+              <option>Thursday Puzzle Night</option>
+              <option>Kids' Table Saturday</option>
+              <option>The 1000-Piece Race (waitlist)</option>
+            </select>
+            <label for="count">How many of you?</label>
+            <select id="count" required>
+              <option value="">Choose one…</option>
+              <option>Just me</option><option>2</option><option>3</option><option>4+</option>
+            </select>
+            <button class="btn" type="submit" style="width:100%;justify-content:center;">Save my seat</button>
+          </form>
+          <p class="form-note">Demo form for the concept site. On the live site this would go straight to the shop.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <div class="wrap">
+      <a class="logo" href="index.html"><span class="dot"></span>Atlas Puzzles</a>
+      <div class="footer-links">
+        <a href="shop.html">The Shelves</a><a href="events.html">Puzzle Nights</a><a href="visit.html">Visit &amp; Holds</a>
+      </div>
+      <p>&copy; 2026 Atlas Puzzles — demo site created as a design sample.</p>
+      <p class="fine">This concept site was put together by a local web design service as an unsolicited sample. Not affiliated with or endorsed by Atlas Puzzles. If you'd rather not be contacted again about this, just reply and let us know.</p>
+    </div>
+  </footer>
+</body>
+</html>

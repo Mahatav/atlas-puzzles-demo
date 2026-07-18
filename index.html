@@ -3,56 +3,22 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Atlas Puzzles | Jigsaw & Game Shop, Kelowna BC</title>
-<meta name="description" content="Atlas Puzzles — a jigsaw puzzle and game specialty shop in Kelowna, BC. Demo concept site." />
+<title>Atlas Puzzles | Jigsaw &amp; Game Shop, Kelowna BC</title>
+<meta name="description" content="Atlas Puzzles is a jigsaw puzzle and game shop at 9-3045 Tutt St in Kelowna. Browse the shelves, join a puzzle night, or ask us to hold one for you." />
+<link rel="stylesheet" href="styles.css" />
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
-
-  :root{
-    --indigo:#4F46E5; --sky:#818CF8; --sun:#F97316; --mint:#34D399;
-    --bg:#F2F0FF; --ink:#241E4E; --paper:#FFFFFF;
-    --r:26px;
-  }
-  *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{margin:0;font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;}
-  h1,h2,h3,.display{font-family:'Baloo 2',sans-serif;}
-  a{color:inherit;}
-  img{display:block;max-width:100%;}
-
-  .demo-banner{background:var(--sun);color:#fff;text-align:center;font-size:13px;padding:9px 16px;font-weight:700;letter-spacing:.02em;}
-  .wrap{max-width:1180px;margin:0 auto;padding:0 28px;}
-
-  header{position:sticky;top:0;background:rgba(242,240,255,.85);backdrop-filter:blur(10px);z-index:30;border-bottom:3px solid var(--ink);}
-  nav{display:flex;align-items:center;justify-content:space-between;padding:18px 0;}
-  .logo{font-family:'Baloo 2',sans-serif;font-weight:800;font-size:24px;display:flex;align-items:center;gap:10px;}
-  .logo .dot{width:14px;height:14px;background:var(--sun);border-radius:4px;transform:rotate(20deg);display:inline-block;}
-  nav ul{list-style:none;display:flex;gap:30px;margin:0;padding:0;}
-  nav a{text-decoration:none;font-weight:700;font-size:15px;color:var(--ink);cursor:pointer;}
-  nav a:hover{color:var(--indigo);}
-
-  .btn{display:inline-flex;align-items:center;gap:8px;background:var(--sun);color:#fff;font-weight:700;font-size:15px;padding:15px 28px;border-radius:16px;text-decoration:none;cursor:pointer;border:3px solid var(--ink);
-    box-shadow:5px 5px 0 var(--ink);transition:transform .15s ease, box-shadow .15s ease;}
-  .btn:hover{transform:translate(-2px,-2px);box-shadow:7px 7px 0 var(--ink);}
-  .btn:active{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--ink);}
-  .btn.alt{background:var(--indigo);}
-  .btn.white{background:#fff;color:var(--ink);}
-  .btn:focus-visible{outline:3px solid var(--mint);outline-offset:3px;}
-
-  /* HERO */
-  .hero{padding:64px 0 40px;position:relative;overflow:hidden;}
-  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;position:relative;z-index:2;}
-  .hero-badge{display:inline-flex;align-items:center;gap:8px;background:#fff;border:3px solid var(--ink);color:var(--ink);font-size:13px;font-weight:700;padding:8px 16px;border-radius:100px;margin-bottom:22px;box-shadow:3px 3px 0 var(--ink);}
-  .hero h1{font-size:clamp(2.6rem,5.5vw,4.4rem);line-height:1.02;font-weight:800;margin:0 0 20px;letter-spacing:-.01em;}
+  .hero{padding:64px 0 48px;}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;}
+  .hero-badge{display:inline-flex;align-items:center;gap:8px;background:#fff;border:3px solid var(--ink);font-size:13px;font-weight:700;padding:8px 16px;border-radius:100px;margin-bottom:22px;box-shadow:3px 3px 0 var(--ink);}
+  .hero h1{font-size:clamp(2.6rem,5.5vw,4.4rem);line-height:1.02;font-weight:800;margin:0 0 20px;}
   .hero h1 span{color:var(--sun);}
-  .hero p{font-size:19px;max-width:44ch;color:rgba(36,30,78,.75);margin:0 0 32px;}
+  .hero p{font-size:19px;max-width:44ch;color:rgba(36,30,78,.75);margin:0 0 30px;}
   .hero-actions{display:flex;gap:16px;flex-wrap:wrap;}
-
   .hero-art{position:relative;aspect-ratio:1/1;}
-  .blob{position:absolute;inset:6%;background:var(--sky);border-radius:40% 60% 55% 45% / 55% 45% 60% 40%;z-index:0;}
-  .hero-photo{position:relative;z-index:1;border-radius:var(--r);border:4px solid var(--ink);box-shadow:10px 10px 0 var(--ink);overflow:hidden;height:100%;}
+  .blob{position:absolute;inset:6%;background:var(--sky);border-radius:40% 60% 55% 45% / 55% 45% 60% 40%;}
+  .hero-photo{position:relative;border-radius:var(--r);border:4px solid var(--ink);box-shadow:10px 10px 0 var(--ink);overflow:hidden;height:100%;}
   .hero-photo img{width:100%;height:100%;object-fit:cover;}
-  .piece{position:absolute;background:var(--sun);border:3px solid var(--ink);border-radius:10px;z-index:2;box-shadow:4px 4px 0 var(--ink);}
+  .piece{position:absolute;border:3px solid var(--ink);border-radius:10px;box-shadow:4px 4px 0 var(--ink);}
   .piece.p1{width:70px;height:70px;top:-24px;right:-20px;transform:rotate(12deg);background:var(--mint);}
   .piece.p2{width:56px;height:56px;bottom:12%;left:-26px;transform:rotate(-16deg);background:#fff;}
 
@@ -63,45 +29,22 @@
   @keyframes scroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
   @media (prefers-reduced-motion: reduce){.marquee-track{animation:none;}}
 
-  section{padding:88px 0;}
-  .eyebrow{display:inline-block;font-size:13px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--indigo);background:#fff;border:2px solid var(--ink);border-radius:100px;padding:5px 14px;margin-bottom:16px;}
-  .section-head{max-width:600px;margin:0 auto 52px;text-align:center;}
-  .section-head h2{font-size:clamp(1.9rem,3.4vw,2.7rem);font-weight:800;margin:0 0 14px;}
-  .section-head p{font-size:17px;color:rgba(36,30,78,.7);margin:0;}
-
   .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;}
-  .card{background:var(--paper);border:3px solid var(--ink);border-radius:var(--r);padding:0;box-shadow:6px 6px 0 var(--ink);overflow:hidden;transition:transform .2s ease, box-shadow .2s ease;cursor:pointer;}
-  .card:hover{transform:translate(-3px,-3px);box-shadow:9px 9px 0 var(--ink);}
-  .card img{width:100%;height:190px;object-fit:cover;border-bottom:3px solid var(--ink);}
-  .card-body{padding:24px;}
-  .card h3{margin:0 0 8px;font-size:20px;}
-  .card p{margin:0;font-size:15px;color:rgba(36,30,78,.7);}
-  .card-tag{display:inline-block;font-size:12px;font-weight:700;background:var(--mint);border:2px solid var(--ink);border-radius:100px;padding:3px 10px;margin-bottom:12px;}
-
-  .stripe{background:var(--indigo);color:#fff;border-radius:32px;padding:56px;display:grid;grid-template-columns:repeat(3,1fr);gap:32px;text-align:center;}
+  .stripe{background:var(--indigo);color:#fff;border-radius:32px;padding:52px;display:grid;grid-template-columns:repeat(3,1fr);gap:32px;text-align:center;border:3px solid var(--ink);box-shadow:8px 8px 0 var(--ink);}
   .stripe b{display:block;font-family:'Baloo 2',sans-serif;font-size:38px;color:var(--sun);}
   .stripe span{font-size:14px;color:rgba(255,255,255,.8);}
 
-  .visit{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;}
-  .visit-photo{border-radius:var(--r);border:4px solid var(--ink);box-shadow:10px 10px 0 var(--ink);overflow:hidden;height:380px;}
-  .visit-photo img{width:100%;height:100%;object-fit:cover;}
-  .visit h2{font-size:clamp(1.8rem,3vw,2.5rem);margin:0 0 16px;}
-  .visit p{color:rgba(36,30,78,.72);font-size:16px;margin:0 0 26px;max-width:42ch;}
-  .visit-details{display:flex;flex-direction:column;gap:12px;margin-bottom:26px;}
-  .visit-details div{display:flex;gap:10px;align-items:center;font-weight:700;font-size:15px;}
-  .visit-details svg{width:20px;height:20px;color:var(--sun);flex-shrink:0;}
-
-  footer{padding:52px 0 40px;text-align:center;border-top:3px solid var(--ink);}
-  footer .logo{justify-content:center;display:flex;margin-bottom:14px;}
-  footer p{font-size:14px;color:rgba(36,30,78,.65);margin:6px 0;}
-  footer .fine{font-size:12px;max-width:60ch;margin:14px auto 0;color:rgba(36,30,78,.5);}
+  .events-teaser{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;}
+  .events-photo{border-radius:var(--r);border:4px solid var(--ink);box-shadow:10px 10px 0 var(--ink);overflow:hidden;height:360px;}
+  .events-photo img{width:100%;height:100%;object-fit:cover;}
+  .event-line{display:flex;justify-content:space-between;align-items:center;padding:16px 0;border-bottom:2px solid rgba(36,30,78,.12);gap:16px;}
+  .event-line b{font-family:'Baloo 2',sans-serif;font-size:17px;}
+  .event-line span{font-size:14px;color:rgba(36,30,78,.6);}
 
   @media (max-width:860px){
-    .hero-grid,.visit{grid-template-columns:1fr;}
+    .hero-grid,.events-teaser{grid-template-columns:1fr;}
     .cards{grid-template-columns:1fr;}
-    .stripe{grid-template-columns:1fr;gap:20px;padding:36px;}
-    nav ul{display:none;}
-    section{padding:56px 0;}
+    .stripe{grid-template-columns:1fr;gap:20px;padding:34px;}
     .hero-art{order:-1;margin-bottom:20px;}
   }
 </style>
@@ -112,13 +55,13 @@
   <header>
     <div class="wrap">
       <nav>
-        <div class="logo"><span class="dot"></span>Atlas Puzzles</div>
+        <a class="logo" href="index.html"><span class="dot"></span>Atlas Puzzles</a>
         <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#shop">Shop</a></li>
-          <li><a href="#visit">Visit</a></li>
+          <li><a href="shop.html">The Shelves</a></li>
+          <li><a href="events.html">Puzzle Nights</a></li>
+          <li><a href="visit.html">Visit &amp; Holds</a></li>
         </ul>
-        <a class="btn" href="tel:2367666674" style="padding:10px 20px;font-size:14px;">Call Us</a>
+        <a class="btn" href="visit.html" style="padding:10px 20px;font-size:14px;">Hold a Puzzle</a>
       </nav>
     </div>
   </header>
@@ -127,18 +70,18 @@
     <section class="hero">
       <div class="hero-grid">
         <div>
-          <span class="hero-badge">🧩 New shop, Kelowna</span>
+          <span class="hero-badge">New shop on Tutt Street</span>
           <h1>Puzzles worth <span>getting lost in.</span></h1>
-          <p>Atlas Puzzles is a Kelowna specialty shop for jigsaw puzzles and games — curated pieces for slow afternoons, thoughtful gifts, and puzzle nights that go long.</p>
+          <p>Atlas Puzzles is a Kelowna shop for jigsaw puzzles and games. Come browse the shelves, or tell us what you're chasing and we'll hold it at the counter.</p>
           <div class="hero-actions">
-            <a class="btn" href="tel:2367666674">Call 236-766-6674</a>
-            <a class="btn alt" href="#visit">Visit the shop</a>
+            <a class="btn" href="shop.html">Browse the shelves</a>
+            <a class="btn alt" href="events.html">Puzzle nights</a>
           </div>
         </div>
         <div class="hero-art">
           <div class="blob"></div>
           <div class="hero-photo">
-            <img src="https://images.unsplash.com/photo-1606503153255-59d8b8b82176?w=900&q=80&auto=format&fit=crop" alt="Jigsaw puzzle pieces spread out" />
+            <img src="https://images.unsplash.com/photo-1606503153255-59d8b8b82176?w=900&q=80&auto=format&fit=crop" alt="Board game map with playing pieces" />
           </div>
           <div class="piece p1"></div>
           <div class="piece p2"></div>
@@ -149,69 +92,66 @@
 
   <div class="marquee" aria-hidden="true">
     <div class="marquee-track">
-      <span>500 to 2000 Pieces</span><span>Great Gifts</span><span>Family Game Night</span><span>Kelowna Local</span>
-      <span>500 to 2000 Pieces</span><span>Great Gifts</span><span>Family Game Night</span><span>Kelowna Local</span>
+      <span>500 to 2000 Pieces</span><span>Weekly Puzzle Nights</span><span>Counter Holds</span><span>Kelowna Local</span>
+      <span>500 to 2000 Pieces</span><span>Weekly Puzzle Nights</span><span>Counter Holds</span><span>Kelowna Local</span>
     </div>
   </div>
 
   <div class="wrap">
-    <section id="about">
+    <section>
       <div class="section-head">
         <span class="eyebrow">A shop built for puzzlers</span>
         <h2>Every piece, picked on purpose</h2>
-        <p>Located at 9-3045 Tutt St in Kelowna, Atlas Puzzles is a newly licensed retail business (City of Kelowna Business Licence #4101374) bringing a dedicated puzzle and games shop to the community.</p>
+        <p>We're at 9-3045 Tutt St in Kelowna. Small shop, good shelves, and a counter you can actually talk to.</p>
       </div>
-
-      <div id="shop" class="cards">
-        <div class="card">
-          <img src="https://images.unsplash.com/photo-1595278069441-2cf29f8005a4?w=500&q=75&auto=format&fit=crop" alt="Jigsaw puzzle close up"/>
+      <div class="cards">
+        <a class="card" href="shop.html" style="text-decoration:none;">
+          <img src="https://images.unsplash.com/photo-1595278069441-2cf29f8005a4?w=500&q=75&auto=format&fit=crop" alt="Jigsaw puzzle pieces up close"/>
           <div class="card-body">
-            <span class="card-tag">Curated</span>
+            <span class="tag">The shelves</span>
             <h3>500 to 2000+ pieces</h3>
-            <p>From a quick afternoon build to a serious weekend challenge.</p>
+            <p>Quick afternoon builds up to serious weekend projects. See what's in stock.</p>
           </div>
-        </div>
-        <div class="card">
-          <img src="https://images.unsplash.com/photo-1522069169874-c58ec4b76be5?w=500&q=75&auto=format&fit=crop" alt="Colorful games and blocks"/>
+        </a>
+        <a class="card" href="events.html" style="text-decoration:none;">
+          <img src="https://images.unsplash.com/photo-1611996575749-79a3a250f948?w=500&q=75&auto=format&fit=crop" alt="Friends around a game table"/>
           <div class="card-body">
-            <span class="card-tag">Gifting</span>
-            <h3>Gifts made easy</h3>
-            <p>A go-to shop for birthdays, holidays, and hostess gifts.</p>
+            <span class="tag orange">Puzzle nights</span>
+            <h3>Thursdays, in-store</h3>
+            <p>Bring a friend or join a table. We supply the puzzle and the snacks.</p>
           </div>
-        </div>
-        <div class="card">
-          <img src="https://images.unsplash.com/photo-1611996575749-79a3a250f948?w=500&q=75&auto=format&fit=crop" alt="Board game night table"/>
+        </a>
+        <a class="card" href="visit.html" style="text-decoration:none;">
+          <img src="https://images.unsplash.com/photo-1522069169874-c58ec4b76be5?w=500&q=75&auto=format&fit=crop" alt="Colourful game pieces"/>
           <div class="card-body">
-            <span class="card-tag">Community</span>
-            <h3>Puzzle nights</h3>
-            <p>A neighbourhood spot for a hobby people love to share.</p>
+            <span class="tag sky">Counter holds</span>
+            <h3>We'll set one aside</h3>
+            <p>After something specific? Ask us to hold it and pick it up when it suits.</p>
           </div>
-        </div>
+        </a>
       </div>
     </section>
 
     <section style="padding-top:0;">
       <div class="stripe">
-        <div><b>500+</b><span>Pieces, minimum</span></div>
-        <div><b>#4101374</b><span>City licence, active</span></div>
-        <div><b>1</b><span>New shop in Kelowna</span></div>
+        <div><b>200+</b><span>puzzles on the shelves</span></div>
+        <div><b>Thursdays</b><span>weekly puzzle night</span></div>
+        <div><b>Tutt St</b><span>Kelowna South</span></div>
       </div>
     </section>
 
-    <section id="visit">
-      <div class="visit">
-        <div>
-          <span class="eyebrow">Come By</span>
-          <h2>Drop by the shop</h2>
-          <p>Stop in, browse the shelves, and find your next puzzle — or the perfect gift for someone who already has too many.</p>
-          <div class="visit-details">
-            <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 21s-6-5.5-6-10a6 6 0 1 1 12 0c0 4.5-6 10-6 10Z"/><circle cx="12" cy="11" r="2.5"/></svg> 9-3045 Tutt St, Kelowna BC</div>
-            <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg> 236-766-6674</div>
-          </div>
-          <a class="btn" href="tel:2367666674">Call 236-766-6674</a>
+    <section style="padding-top:0;">
+      <div class="events-teaser">
+        <div class="events-photo">
+          <img src="https://images.unsplash.com/photo-1587654780291-39c9404d746b?w=900&q=80&auto=format&fit=crop" alt="Puzzle in progress on a table" />
         </div>
-        <div class="visit-photo">
-          <img src="https://images.unsplash.com/photo-1587654780291-39c9404d746b?w=900&q=80&auto=format&fit=crop" alt="Puzzle table setup" />
+        <div>
+          <span class="eyebrow">This month</span>
+          <h2 style="font-size:clamp(1.8rem,3vw,2.5rem);margin:0 0 18px;">What's on at the shop</h2>
+          <div class="event-line"><b>Thursday Puzzle Night</b><span>Every Thursday, 6–9pm</span></div>
+          <div class="event-line"><b>Kids' Table Saturday</b><span>Last Saturday monthly</span></div>
+          <div class="event-line"><b>1000-Piece Race</b><span>Date to be announced</span></div>
+          <a class="btn mint" href="events.html" style="margin-top:24px;">See event details</a>
         </div>
       </div>
     </section>
@@ -219,7 +159,10 @@
 
   <footer>
     <div class="wrap">
-      <div class="logo"><span class="dot"></span>Atlas Puzzles</div>
+      <a class="logo" href="index.html"><span class="dot"></span>Atlas Puzzles</a>
+      <div class="footer-links">
+        <a href="shop.html">The Shelves</a><a href="events.html">Puzzle Nights</a><a href="visit.html">Visit &amp; Holds</a>
+      </div>
       <p>&copy; 2026 Atlas Puzzles — demo site created as a design sample.</p>
       <p class="fine">This concept site was put together by a local web design service as an unsolicited sample. Not affiliated with or endorsed by Atlas Puzzles. If you'd rather not be contacted again about this, just reply and let us know.</p>
     </div>

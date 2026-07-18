@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>The Shelves | Atlas Puzzles, Kelowna BC</title>
+<meta name="description" content="What's on the shelves at Atlas Puzzles in Kelowna — jigsaw puzzles from 500 to 2000+ pieces, plus games and accessories." />
+<link rel="stylesheet" href="styles.css" />
+<style>
+  .shelf{margin-bottom:64px;}
+  .shelf-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;}
+  .prod .card-body{display:flex;flex-direction:column;gap:6px;}
+  .prod .row{display:flex;justify-content:space-between;align-items:center;margin-top:6px;}
+  .note-band{background:#fff;border:3px solid var(--ink);border-radius:var(--r);box-shadow:6px 6px 0 var(--ink);padding:28px 32px;display:flex;gap:18px;align-items:flex-start;}
+  .note-band svg{width:26px;height:26px;color:var(--sun);flex-shrink:0;margin-top:2px;}
+  .note-band p{margin:0;font-size:15px;color:rgba(36,30,78,.72);}
+  @media (max-width:860px){.shelf-grid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+  <div class="demo-banner">DEMO CONCEPT SITE — a design sample built for Atlas Puzzles, not yet live for the business</div>
+
+  <header>
+    <div class="wrap">
+      <nav>
+        <a class="logo" href="index.html"><span class="dot"></span>Atlas Puzzles</a>
+        <ul>
+          <li><a class="active" href="shop.html">The Shelves</a></li>
+          <li><a href="events.html">Puzzle Nights</a></li>
+          <li><a href="visit.html">Visit &amp; Holds</a></li>
+        </ul>
+        <a class="btn" href="visit.html" style="padding:10px 20px;font-size:14px;">Hold a Puzzle</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="page-hero">
+    <div class="wrap">
+      <span class="eyebrow">The shelves</span>
+      <h1>What's in the shop right now</h1>
+      <p>A sample of the range. Stock turns over fast — if you see something you want, call 236-766-6674 and we'll hold it at the counter.</p>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <section>
+      <div class="shelf">
+        <div class="section-head left">
+          <span class="eyebrow">Jigsaws</span>
+          <h2>Puzzles by size</h2>
+        </div>
+        <div class="shelf-grid">
+          <div class="card prod">
+            <img src="https://images.unsplash.com/photo-1595278069441-2cf29f8005a4?w=500&q=75&auto=format&fit=crop" alt="Puzzle pieces mid-build"/>
+            <div class="card-body">
+              <span class="tag">Weeknight</span>
+              <h3>500 pieces</h3>
+              <p>One good evening, start to finish. The right gift when you're not sure.</p>
+              <div class="row"><span class="price">$24 – $32</span></div>
+            </div>
+          </div>
+          <div class="card prod">
+            <img src="https://images.unsplash.com/photo-1606503153255-59d8b8b82176?w=500&q=75&auto=format&fit=crop" alt="Detailed map puzzle"/>
+            <div class="card-body">
+              <span class="tag orange">The standard</span>
+              <h3>1000 pieces</h3>
+              <p>The classic weekend build. Maps, landscapes, art prints, and the odd chaotic gradient.</p>
+              <div class="row"><span class="price">$34 – $48</span></div>
+            </div>
+          </div>
+          <div class="card prod">
+            <img src="https://images.unsplash.com/photo-1587654780291-39c9404d746b?w=500&q=75&auto=format&fit=crop" alt="Large puzzle spread across a table"/>
+            <div class="card-body">
+              <span class="tag sky">Commitment</span>
+              <h3>1500 – 2000+ pieces</h3>
+              <p>Clear the dining table. These take a while, and that's the point.</p>
+              <div class="row"><span class="price">$52 – $89</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="shelf">
+        <div class="section-head left">
+          <span class="eyebrow">Beyond jigsaws</span>
+          <h2>Games and extras</h2>
+        </div>
+        <div class="shelf-grid">
+          <div class="card prod">
+            <img src="https://images.unsplash.com/photo-1611996575749-79a3a250f948?w=500&q=75&auto=format&fit=crop" alt="Board game on a table between friends"/>
+            <div class="card-body">
+              <span class="tag">Table games</span>
+              <h3>Board &amp; card games</h3>
+              <p>A tight shelf of games we actually play — no filler titles.</p>
+              <div class="row"><span class="price">$18 – $75</span></div>
+            </div>
+          </div>
+          <div class="card prod">
+            <img src="https://images.unsplash.com/photo-1522069169874-c58ec4b76be5?w=500&q=75&auto=format&fit=crop" alt="Colourful pieces sorted by colour"/>
+            <div class="card-body">
+              <span class="tag orange">For kids</span>
+              <h3>Kids' puzzles</h3>
+              <p>Chunky pieces, good art, ages 3 and up. Grandparent-approved.</p>
+              <div class="row"><span class="price">$12 – $28</span></div>
+            </div>
+          </div>
+          <div class="card prod">
+            <img src="https://images.unsplash.com/photo-1611195974226-a6a9be9dd763?w=500&q=75&auto=format&fit=crop" alt="Puzzle accessories and sorting trays"/>
+            <div class="card-body">
+              <span class="tag sky">Accessories</span>
+              <h3>Mats, trays &amp; glue</h3>
+              <p>Roll-up mats, sorting trays, and finishing glue for the keepers.</p>
+              <div class="row"><span class="price">$9 – $45</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="note-band">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="9"/><path d="M12 8v4M12 16h.01"/></svg>
+        <p>Sample stock and pricing for this demo. On the live site, this page would list the shop's actual shelves and current prices, and could tie into a simple online catalogue if wanted.</p>
+      </div>
+    </section>
+
+    <section style="padding-top:0;text-align:center;">
+      <a class="btn" href="visit.html">Ask us to hold one</a>
+    </section>
+  </div>
+
+  <footer>
+    <div class="wrap">
+      <a class="logo" href="index.html"><span class="dot"></span>Atlas Puzzles</a>
+      <div class="footer-links">
+        <a href="shop.html">The Shelves</a><a href="events.html">Puzzle Nights</a><a href="visit.html">Visit &amp; Holds</a>
+      </div>
+      <p>&copy; 2026 Atlas Puzzles — demo site created as a design sample.</p>
+      <p class="fine">This concept site was put together by a local web design service as an unsolicited sample. Not affiliated with or endorsed by Atlas Puzzles. If you'd rather not be contacted again about this, just reply and let us know.</p>
+    </div>
+  </footer>
+</body>
+</html>
