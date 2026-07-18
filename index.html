@@ -6,118 +6,222 @@
 <title>Atlas Puzzles | Jigsaw & Game Shop, Kelowna BC</title>
 <meta name="description" content="Atlas Puzzles — a jigsaw puzzle and game specialty shop in Kelowna, BC. Demo concept site." />
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;500;600;700&family=Rubik:wght@400;500;600;700;800&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+
   :root{
-    --primary:#4F46E5; --secondary:#818CF8; --cta:#F97316;
-    --bg:#EEF2FF; --text:#1E1B4B; --card:#ffffff;
+    --indigo:#4F46E5; --sky:#818CF8; --sun:#F97316; --mint:#34D399;
+    --bg:#F2F0FF; --ink:#241E4E; --paper:#FFFFFF;
+    --r:26px;
   }
   *{box-sizing:border-box;}
-  body{margin:0;font-family:'Nunito Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.65;}
-  h1,h2,h3{font-family:'Rubik',sans-serif;margin:0 0 .5em;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;}
+  h1,h2,h3,.display{font-family:'Baloo 2',sans-serif;}
   a{color:inherit;}
-  .demo-banner{background:var(--cta);color:#fff;text-align:center;font-size:14px;padding:8px 16px;font-weight:600;letter-spacing:.02em;}
-  .wrap{max-width:1100px;margin:0 auto;padding:0 24px;}
-  header{position:sticky;top:0;background:rgba(238,242,255,.9);backdrop-filter:blur(6px);border-bottom:1px solid rgba(79,70,229,.15);z-index:20;}
-  nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0;}
-  .logo{font-size:22px;font-weight:800;color:var(--primary);}
-  nav ul{list-style:none;display:flex;gap:28px;margin:0;padding:0;}
-  nav a{text-decoration:none;font-weight:600;color:var(--text);cursor:pointer;transition:color .2s;}
-  nav a:hover{color:var(--primary);}
-  .btn{display:inline-block;background:var(--cta);color:#fff;font-weight:700;padding:14px 28px;border-radius:10px;text-decoration:none;cursor:pointer;transition:transform .2s, box-shadow .2s;box-shadow:0 4px 14px rgba(249,115,22,.3);}
-  .btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(249,115,22,.4);}
-  .btn:focus-visible, a:focus-visible, nav a:focus-visible{outline:3px solid var(--primary);outline-offset:3px;}
-  .hero{padding:80px 0 64px;display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;}
-  .hero h1{font-size:44px;line-height:1.15;color:var(--primary);}
-  .hero p{font-size:19px;max-width:46ch;}
-  .hero-badge{display:inline-block;background:var(--secondary);color:#fff;font-size:13px;font-weight:700;padding:6px 14px;border-radius:999px;margin-bottom:18px;}
-  .hero-art{background:linear-gradient(135deg,var(--secondary),var(--primary));border-radius:24px;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;color:#fff;}
-  section{padding:64px 0;}
-  .features{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
-  .card{background:var(--card);border-radius:16px;padding:28px;box-shadow:0 2px 12px rgba(79,70,229,.08);border:1px solid rgba(79,70,229,.08);}
-  .card svg{width:32px;height:32px;color:var(--primary);margin-bottom:12px;}
-  .cta-section{background:var(--primary);color:#fff;border-radius:24px;padding:56px;text-align:center;margin:0 24px;}
-  .cta-section h2{color:#fff;}
-  .cta-section .btn{background:#fff;color:var(--primary);}
-  footer{padding:40px 0;text-align:center;font-size:14px;color:rgba(30,27,75,.7);}
-  @media (max-width:800px){
-    .hero{grid-template-columns:1fr;padding-top:48px;}
-    .features{grid-template-columns:1fr;}
+  img{display:block;max-width:100%;}
+
+  .demo-banner{background:var(--sun);color:#fff;text-align:center;font-size:13px;padding:9px 16px;font-weight:700;letter-spacing:.02em;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 28px;}
+
+  header{position:sticky;top:0;background:rgba(242,240,255,.85);backdrop-filter:blur(10px);z-index:30;border-bottom:3px solid var(--ink);}
+  nav{display:flex;align-items:center;justify-content:space-between;padding:18px 0;}
+  .logo{font-family:'Baloo 2',sans-serif;font-weight:800;font-size:24px;display:flex;align-items:center;gap:10px;}
+  .logo .dot{width:14px;height:14px;background:var(--sun);border-radius:4px;transform:rotate(20deg);display:inline-block;}
+  nav ul{list-style:none;display:flex;gap:30px;margin:0;padding:0;}
+  nav a{text-decoration:none;font-weight:700;font-size:15px;color:var(--ink);cursor:pointer;}
+  nav a:hover{color:var(--indigo);}
+
+  .btn{display:inline-flex;align-items:center;gap:8px;background:var(--sun);color:#fff;font-weight:700;font-size:15px;padding:15px 28px;border-radius:16px;text-decoration:none;cursor:pointer;border:3px solid var(--ink);
+    box-shadow:5px 5px 0 var(--ink);transition:transform .15s ease, box-shadow .15s ease;}
+  .btn:hover{transform:translate(-2px,-2px);box-shadow:7px 7px 0 var(--ink);}
+  .btn:active{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--ink);}
+  .btn.alt{background:var(--indigo);}
+  .btn.white{background:#fff;color:var(--ink);}
+  .btn:focus-visible{outline:3px solid var(--mint);outline-offset:3px;}
+
+  /* HERO */
+  .hero{padding:64px 0 40px;position:relative;overflow:hidden;}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;position:relative;z-index:2;}
+  .hero-badge{display:inline-flex;align-items:center;gap:8px;background:#fff;border:3px solid var(--ink);color:var(--ink);font-size:13px;font-weight:700;padding:8px 16px;border-radius:100px;margin-bottom:22px;box-shadow:3px 3px 0 var(--ink);}
+  .hero h1{font-size:clamp(2.6rem,5.5vw,4.4rem);line-height:1.02;font-weight:800;margin:0 0 20px;letter-spacing:-.01em;}
+  .hero h1 span{color:var(--sun);}
+  .hero p{font-size:19px;max-width:44ch;color:rgba(36,30,78,.75);margin:0 0 32px;}
+  .hero-actions{display:flex;gap:16px;flex-wrap:wrap;}
+
+  .hero-art{position:relative;aspect-ratio:1/1;}
+  .blob{position:absolute;inset:6%;background:var(--sky);border-radius:40% 60% 55% 45% / 55% 45% 60% 40%;z-index:0;}
+  .hero-photo{position:relative;z-index:1;border-radius:var(--r);border:4px solid var(--ink);box-shadow:10px 10px 0 var(--ink);overflow:hidden;height:100%;}
+  .hero-photo img{width:100%;height:100%;object-fit:cover;}
+  .piece{position:absolute;background:var(--sun);border:3px solid var(--ink);border-radius:10px;z-index:2;box-shadow:4px 4px 0 var(--ink);}
+  .piece.p1{width:70px;height:70px;top:-24px;right:-20px;transform:rotate(12deg);background:var(--mint);}
+  .piece.p2{width:56px;height:56px;bottom:12%;left:-26px;transform:rotate(-16deg);background:#fff;}
+
+  .marquee{border-top:3px solid var(--ink);border-bottom:3px solid var(--ink);overflow:hidden;background:var(--ink);}
+  .marquee-track{display:flex;gap:48px;white-space:nowrap;padding:14px 0;animation:scroll 22s linear infinite;width:max-content;}
+  .marquee span{font-family:'Baloo 2',sans-serif;font-weight:700;font-size:16px;color:#fff;display:flex;align-items:center;gap:16px;}
+  .marquee span::after{content:"★";color:var(--sun);}
+  @keyframes scroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+  @media (prefers-reduced-motion: reduce){.marquee-track{animation:none;}}
+
+  section{padding:88px 0;}
+  .eyebrow{display:inline-block;font-size:13px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--indigo);background:#fff;border:2px solid var(--ink);border-radius:100px;padding:5px 14px;margin-bottom:16px;}
+  .section-head{max-width:600px;margin:0 auto 52px;text-align:center;}
+  .section-head h2{font-size:clamp(1.9rem,3.4vw,2.7rem);font-weight:800;margin:0 0 14px;}
+  .section-head p{font-size:17px;color:rgba(36,30,78,.7);margin:0;}
+
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;}
+  .card{background:var(--paper);border:3px solid var(--ink);border-radius:var(--r);padding:0;box-shadow:6px 6px 0 var(--ink);overflow:hidden;transition:transform .2s ease, box-shadow .2s ease;cursor:pointer;}
+  .card:hover{transform:translate(-3px,-3px);box-shadow:9px 9px 0 var(--ink);}
+  .card img{width:100%;height:190px;object-fit:cover;border-bottom:3px solid var(--ink);}
+  .card-body{padding:24px;}
+  .card h3{margin:0 0 8px;font-size:20px;}
+  .card p{margin:0;font-size:15px;color:rgba(36,30,78,.7);}
+  .card-tag{display:inline-block;font-size:12px;font-weight:700;background:var(--mint);border:2px solid var(--ink);border-radius:100px;padding:3px 10px;margin-bottom:12px;}
+
+  .stripe{background:var(--indigo);color:#fff;border-radius:32px;padding:56px;display:grid;grid-template-columns:repeat(3,1fr);gap:32px;text-align:center;}
+  .stripe b{display:block;font-family:'Baloo 2',sans-serif;font-size:38px;color:var(--sun);}
+  .stripe span{font-size:14px;color:rgba(255,255,255,.8);}
+
+  .visit{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;}
+  .visit-photo{border-radius:var(--r);border:4px solid var(--ink);box-shadow:10px 10px 0 var(--ink);overflow:hidden;height:380px;}
+  .visit-photo img{width:100%;height:100%;object-fit:cover;}
+  .visit h2{font-size:clamp(1.8rem,3vw,2.5rem);margin:0 0 16px;}
+  .visit p{color:rgba(36,30,78,.72);font-size:16px;margin:0 0 26px;max-width:42ch;}
+  .visit-details{display:flex;flex-direction:column;gap:12px;margin-bottom:26px;}
+  .visit-details div{display:flex;gap:10px;align-items:center;font-weight:700;font-size:15px;}
+  .visit-details svg{width:20px;height:20px;color:var(--sun);flex-shrink:0;}
+
+  footer{padding:52px 0 40px;text-align:center;border-top:3px solid var(--ink);}
+  footer .logo{justify-content:center;display:flex;margin-bottom:14px;}
+  footer p{font-size:14px;color:rgba(36,30,78,.65);margin:6px 0;}
+  footer .fine{font-size:12px;max-width:60ch;margin:14px auto 0;color:rgba(36,30,78,.5);}
+
+  @media (max-width:860px){
+    .hero-grid,.visit{grid-template-columns:1fr;}
+    .cards{grid-template-columns:1fr;}
+    .stripe{grid-template-columns:1fr;gap:20px;padding:36px;}
     nav ul{display:none;}
-    .hero h1{font-size:32px;}
+    section{padding:56px 0;}
+    .hero-art{order:-1;margin-bottom:20px;}
   }
 </style>
 </head>
 <body>
-  <div class="demo-banner">DEMO CONCEPT SITE — built as a sample for Atlas Puzzles, not yet live for the business</div>
+  <div class="demo-banner">DEMO CONCEPT SITE — a design sample built for Atlas Puzzles, not yet live for the business</div>
 
   <header>
     <div class="wrap">
       <nav>
-        <div class="logo">Atlas Puzzles</div>
+        <div class="logo"><span class="dot"></span>Atlas Puzzles</div>
         <ul>
           <li><a href="#about">About</a></li>
           <li><a href="#shop">Shop</a></li>
           <li><a href="#visit">Visit</a></li>
         </ul>
-        <a class="btn" href="#visit" style="padding:10px 20px;">Visit Us</a>
+        <a class="btn" href="tel:2367666674" style="padding:10px 20px;font-size:14px;">Call Us</a>
       </nav>
     </div>
   </header>
 
   <div class="wrap">
     <section class="hero">
-      <div>
-        <span class="hero-badge">New in Kelowna</span>
-        <h1>Puzzles worth getting lost in.</h1>
-        <p>Atlas Puzzles is a Kelowna specialty shop for jigsaw puzzles and games — curated pieces for slow afternoons, gifts, and puzzle nights.</p>
-        <a class="btn" href="tel:2367666674">Call 236-766-6674</a>
-      </div>
-      <div class="hero-art" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:120px;height:120px;">
-          <path d="M6 6h5v1.5a2 2 0 1 0 2 0V6h5v5h-1.5a2 2 0 1 0 0 2H18v5h-5v-1.5a2 2 0 1 0-2 0V18H6v-5h1.5a2 2 0 1 0 0-2H6Z"/>
-        </svg>
+      <div class="hero-grid">
+        <div>
+          <span class="hero-badge">🧩 New shop, Kelowna</span>
+          <h1>Puzzles worth <span>getting lost in.</span></h1>
+          <p>Atlas Puzzles is a Kelowna specialty shop for jigsaw puzzles and games — curated pieces for slow afternoons, thoughtful gifts, and puzzle nights that go long.</p>
+          <div class="hero-actions">
+            <a class="btn" href="tel:2367666674">Call 236-766-6674</a>
+            <a class="btn alt" href="#visit">Visit the shop</a>
+          </div>
+        </div>
+        <div class="hero-art">
+          <div class="blob"></div>
+          <div class="hero-photo">
+            <img src="https://images.unsplash.com/photo-1606503153255-59d8b8b82176?w=900&q=80&auto=format&fit=crop" alt="Jigsaw puzzle pieces spread out" />
+          </div>
+          <div class="piece p1"></div>
+          <div class="piece p2"></div>
+        </div>
       </div>
     </section>
+  </div>
 
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>500 to 2000 Pieces</span><span>Great Gifts</span><span>Family Game Night</span><span>Kelowna Local</span>
+      <span>500 to 2000 Pieces</span><span>Great Gifts</span><span>Family Game Night</span><span>Kelowna Local</span>
+    </div>
+  </div>
+
+  <div class="wrap">
     <section id="about">
-      <h2>A shop built for puzzlers</h2>
-      <p style="max-width:65ch;">Located at 9-3045 Tutt St in Kelowna, Atlas Puzzles is a newly licensed retail business (City of Kelowna Business Licence #4101374) bringing a dedicated puzzle and games shop to the community.</p>
+      <div class="section-head">
+        <span class="eyebrow">A shop built for puzzlers</span>
+        <h2>Every piece, picked on purpose</h2>
+        <p>Located at 9-3045 Tutt St in Kelowna, Atlas Puzzles is a newly licensed retail business (City of Kelowna Business Licence #4101374) bringing a dedicated puzzle and games shop to the community.</p>
+      </div>
+
+      <div id="shop" class="cards">
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1595278069441-2cf29f8005a4?w=500&q=75&auto=format&fit=crop" alt="Jigsaw puzzle close up"/>
+          <div class="card-body">
+            <span class="card-tag">Curated</span>
+            <h3>500 to 2000+ pieces</h3>
+            <p>From a quick afternoon build to a serious weekend challenge.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1522069169874-c58ec4b76be5?w=500&q=75&auto=format&fit=crop" alt="Colorful games and blocks"/>
+          <div class="card-body">
+            <span class="card-tag">Gifting</span>
+            <h3>Gifts made easy</h3>
+            <p>A go-to shop for birthdays, holidays, and hostess gifts.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1611996575749-79a3a250f948?w=500&q=75&auto=format&fit=crop" alt="Board game night table"/>
+          <div class="card-body">
+            <span class="card-tag">Community</span>
+            <h3>Puzzle nights</h3>
+            <p>A neighbourhood spot for a hobby people love to share.</p>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section id="shop">
-      <h2>What to expect</h2>
-      <div class="features">
-        <div class="card">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
-          <h3>Curated selection</h3>
-          <p>From quick 500-piece puzzles to serious 1000+ piece challenges.</p>
-        </div>
-        <div class="card">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 12a8 8 0 1 1-16 0 8 8 0 0 1 16 0Z"/><path d="M12 8v4l3 2"/></svg>
-          <h3>Gifts made easy</h3>
-          <p>A go-to shop for birthdays, holidays, and hostess gifts.</p>
-        </div>
-        <div class="card">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 21s-7-4.35-9.5-8.5C.5 8 3 4 7 4c2 0 3.5 1 5 3 1.5-2 3-3 5-3 4 0 6.5 4 4.5 8.5C19 16.65 12 21 12 21Z"/></svg>
-          <h3>Community shop</h3>
-          <p>A neighbourhood spot for a hobby people love to share.</p>
-        </div>
+    <section style="padding-top:0;">
+      <div class="stripe">
+        <div><b>500+</b><span>Pieces, minimum</span></div>
+        <div><b>#4101374</b><span>City licence, active</span></div>
+        <div><b>1</b><span>New shop in Kelowna</span></div>
       </div>
     </section>
 
     <section id="visit">
-      <div class="cta-section">
-        <h2>Drop by the shop</h2>
-        <p>9-3045 Tutt St, Kelowna BC</p>
-        <a class="btn" href="tel:2367666674">Call 236-766-6674</a>
+      <div class="visit">
+        <div>
+          <span class="eyebrow">Come By</span>
+          <h2>Drop by the shop</h2>
+          <p>Stop in, browse the shelves, and find your next puzzle — or the perfect gift for someone who already has too many.</p>
+          <div class="visit-details">
+            <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 21s-6-5.5-6-10a6 6 0 1 1 12 0c0 4.5-6 10-6 10Z"/><circle cx="12" cy="11" r="2.5"/></svg> 9-3045 Tutt St, Kelowna BC</div>
+            <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg> 236-766-6674</div>
+          </div>
+          <a class="btn" href="tel:2367666674">Call 236-766-6674</a>
+        </div>
+        <div class="visit-photo">
+          <img src="https://images.unsplash.com/photo-1587654780291-39c9404d746b?w=900&q=80&auto=format&fit=crop" alt="Puzzle table setup" />
+        </div>
       </div>
     </section>
   </div>
 
   <footer>
     <div class="wrap">
+      <div class="logo"><span class="dot"></span>Atlas Puzzles</div>
       <p>&copy; 2026 Atlas Puzzles — demo site created as a design sample.</p>
-      <p style="font-size:12px;max-width:60ch;margin:8px auto 0;">This concept site was put together by a local web design service as an unsolicited sample. Not affiliated with or endorsed by Atlas Puzzles. If you'd rather not be contacted again about this, just reply and let us know.</p>
+      <p class="fine">This concept site was put together by a local web design service as an unsolicited sample. Not affiliated with or endorsed by Atlas Puzzles. If you'd rather not be contacted again about this, just reply and let us know.</p>
     </div>
   </footer>
 </body>
